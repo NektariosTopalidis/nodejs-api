@@ -13,7 +13,7 @@ exports.postAddProduct = (req, res, next) => {
   const imageUrl = req.body.imageUrl;
   const price = req.body.price;
   const description = req.body.description;
-
+  
   Product.create(
     {
       title: title,
@@ -38,7 +38,7 @@ exports.getEditProduct = (req, res, next) => {
     return res.redirect('/');
   }
   const prodId = req.params.productId;
-
+  
   Product.findByPk(prodId)
   .then((product) => {
     if (!product) {
